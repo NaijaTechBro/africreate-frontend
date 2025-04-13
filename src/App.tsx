@@ -2,12 +2,13 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider, useAuth } from './contexts/AuthContext';
 import HomePage from './pages/HomePage';
-import LoginPage from './pages/LoginPage';
-import RegisterPage from './pages/RegisterPage';
-import ForgotPasswordPage from './pages/ForgotPassword';
+import LoginPage from './pages/Auth/LoginPage';
+import RegisterPage from './pages/Auth/RegisterPage';
+import ForgotPasswordPage from './pages/Auth/ForgotPassword';
 import ProfilePage from './pages/ProfilePage';
-import CreatorDashboard from './pages/CreatorDashboard';
-import ContentPage from './pages/ContentPage';
+import CreatorDashboard from './pages/Creator/CreatorDashboard';
+import CreateContentPage from './pages/Creator/CreateContentPage';
+import ContentPage from './pages/Creator/ContentPage';
 import SubscriptionsPage from './pages/SubscriptionsPage';
 import NotFoundPage from './pages/NotFoundPage';
 import Layout from './components/Layout';
@@ -51,6 +52,14 @@ const App: React.FC = () => {
             <Route path="/login" element={<LoginPage />} />
             <Route path="/register" element={<RegisterPage />} />
             <Route path="/forgot-password" element={<ForgotPasswordPage />} /> 
+            <Route 
+              path="/create-content" 
+              element={
+                <CreatorRoute>
+                  <CreateContentPage />
+                </CreatorRoute>
+              }
+            />
             <Route 
               path="/profile/:username" 
               element={

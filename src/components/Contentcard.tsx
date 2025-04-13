@@ -37,11 +37,11 @@ const ContentCard: React.FC<ContentCardProps> = ({ content }) => {
           <h3 className="mb-2 text-lg font-medium line-clamp-2">{content.title}</h3>
         </Link>
         <Link to={`/profile/${creator.username}`} className="flex items-center mb-2 group">
-          <img
-            src={creator.profilePicture || '/user-placeholder.jpg'}
+          {/* <img
+            src={User.profilePicture || '/user-placeholder.jpg'}
             alt={creator.username}
             className="w-8 h-8 mr-2 rounded-full"
-          />
+          /> */}
           <span className="text-sm font-medium text-gray-900 group-hover:text-blue-600">
             {creator.username}
           </span>
